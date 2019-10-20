@@ -37,6 +37,7 @@ make -j4
 ## Examples
 
 ## vtkbool_union
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/vtkbool_union.png)
 Typically in VTK all of the meshes (cubes, spheres, etc) would have its own actor which renders it to the output window.
 However, to generate an STL file, all of those meshes need to be merged together. With the CSG model, one would use a
 union to do so. I have been unable to get the boolean filter (union/intersection) that is built into VTK to work with
@@ -47,9 +48,11 @@ This example shows 2 cubes and a cylinder connected together with a union. The c
 vtkbool union that is applied.
 
 ## native_union
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/native_union.png)
 This shows the one example I can get of the native VTK union working. It unions 2 spheres together.
 
 ## append_for_union
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/append_for_union.png)
 One problem with vtkbool
 is that the input objects must intersect. If one tries to union two disjoint meshes together, vtkbool will print an
 error to stderr and return an empty mesh. As a workaround, 3d meshes can be "appended". The output will be completely
@@ -59,9 +62,13 @@ print, even if the intersection is technically covered twice.
 This example uses append for 2 cubes that intersect and a cylinder that's not connected.
 
 ## translate
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/translate.png)
+
 `vtkTransformFilter` can do rotations, scaling, and translations. This example shows it doing a rotation and translation.
 
 ### 3dhull
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/3dhull.png)
+
 The `vtkDelaunay3D` computes a mostly accurate 3d convex hull. However, it outputs unstructured data (a collection of
 tetrahedons), which has to be converted back into a 3d mesh with `tkDataSetSurfaceFilter`.
 
@@ -69,12 +76,17 @@ The `SetOffset` option is important. If it is set too low, the outputed 3d "conv
 Setting it higher creates more warning spam on the console.
 
 ## extrusion
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/extrusion.png)
+
 This example shows a linear extrusion of a pentagon.
 
 ## spring
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/spring.png)
+
 This example shows a pentagon that is extruded linearly and rotated at the same time. That forms a spring shape.
 
 ## torus
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/torus.png)
 
 `vtkParametricFunctionSource` can generate a 3d mesh by evaluating a parameteric function with a specified resolution.
 This example uses the built in torus function.

@@ -38,6 +38,7 @@ make -j4
 
 ## vtkbool_union
 ![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/vtkbool_union.png)
+
 Typically in VTK all of the meshes (cubes, spheres, etc) would have its own actor which renders it to the output window.
 However, to generate an STL file, all of those meshes need to be merged together. With the CSG model, one would use a
 union to do so. I have been unable to get the boolean filter (union/intersection) that is built into VTK to work with
@@ -49,10 +50,12 @@ vtkbool union that is applied.
 
 ## native_union
 ![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/native_union.png)
+
 This shows the one example I can get of the native VTK union working. It unions 2 spheres together.
 
 ## append_for_union
 ![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/append_for_union.png)
+
 One problem with vtkbool
 is that the input objects must intersect. If one tries to union two disjoint meshes together, vtkbool will print an
 error to stderr and return an empty mesh. As a workaround, 3d meshes can be "appended". The output will be completely

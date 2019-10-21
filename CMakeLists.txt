@@ -22,6 +22,7 @@ find_package(VTK REQUIRED COMPONENTS
     vtkRenderingCore
     vtkRenderingFreeType
     vtkRenderingOpenGL2
+    vtkViewsInfovis
     NO_MODULE)
 include(${VTK_USE_FILE})
 
@@ -52,3 +53,6 @@ target_link_libraries(extrusion ${GLEW_LIBRARY} ${VTK_LIBRARIES})
 
 add_executable(spring spring.cxx)
 target_link_libraries(spring ${GLEW_LIBRARY} ${VTK_LIBRARIES})
+
+add_executable(colors colors.cxx)
+target_link_libraries(colors ${GLEW_LIBRARY} ${VTK_LIBRARIES} vtkbool)

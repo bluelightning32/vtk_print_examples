@@ -13,12 +13,6 @@ for the 3d mesh functions. For these examples, all of the rendering boilerplate 
 
 VTK has a BSD 3 clause license, and vtkbool is licensed Apache 2.0.
 
-VTK is designed to have scalar data associated with each vertex, then the mapper would convert that scalar data into
-colors, which would be applied to the polyhedron faces. However, none of the simple mesh generators (cube, cylinder,
-sphere, etc.) have options to set their color/scalar data. There is no existing filter to set the color on a mesh either.
-Even if one wrote a custom filter to do so, vtkbool will overwrite the color/scalar data. I have not found a solution
-to get colored meshes.
-
 Other missing CAD features:
 * Minkowski sum
 * 3d to 2d projection
@@ -93,3 +87,15 @@ This example shows a pentagon that is extruded linearly and rotated at the same 
 
 `vtkParametricFunctionSource` can generate a 3d mesh by evaluating a parameteric function with a specified resolution.
 This example uses the built in torus function.
+
+## colors
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/colors.png)
+
+VTK is designed to have scalar data associated with each vertex or cell. The
+mapper converts the scalar data into colors for the mesh faces. This example
+uses the `vtkApplyColors` option to directly set the cell scalar to the color
+(instead of making the mapper use a lookup table from integer to
+color).
+
+This example also shows how helper functions can be written to help with
+creating CSGs.

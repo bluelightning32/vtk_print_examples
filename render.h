@@ -4,6 +4,7 @@
 #include <vtkInteractorStyleSwitch.h>
 #include <vtkPNGWriter.h>
 #include <vtkPolyDataMapper.h>
+#include <vtkProperty.h>
 #include <vtkRenderer.h>
 #include <vtkRenderWindow.h>
 #include <vtkRenderWindowInteractor.h>
@@ -24,6 +25,9 @@ inline void Render(vtkSmartPointer<vtkAlgorithm> shape, const char* output) {
 
   auto mapper = vtkSmartPointer<vtkPolyDataMapper>::New();
   mapper->SetInputConnection(shape->GetOutputPort());
+  mapper->SetScalarModeToUseCellFieldData();
+  mapper->SelectColorArray("vtkApplyColors color");
+  mapper->SetScalarVisibility(true);
 
   auto actor = vtkSmartPointer<vtkActor>::New();
   actor->SetMapper(mapper);

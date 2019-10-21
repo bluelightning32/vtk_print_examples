@@ -31,6 +31,7 @@ inline void Render(vtkSmartPointer<vtkAlgorithm> shape, const char* output) {
 
   auto actor = vtkSmartPointer<vtkActor>::New();
   actor->SetMapper(mapper);
+  actor->GetProperty()->SetColor(0.8, 1, 0.8);
 
   auto renderer = vtkSmartPointer<vtkRenderer>::New();
   renderer->AddViewProp(actor);

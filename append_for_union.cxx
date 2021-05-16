@@ -24,10 +24,9 @@ vtkSmartPointer<vtkPolyDataAlgorithm> GenerateShape() {
   cyl->SetCenter(0, 8, 0);
 
   auto append = vtkSmartPointer<vtkAppendPolyData>::New();
-  append->UserManagedInputsOn();
-  append->SetInputConnectionByNumber(0, cu->GetOutputPort());
-  append->SetInputConnectionByNumber(1, cu2->GetOutputPort());
-  append->SetInputConnectionByNumber(2, cyl->GetOutputPort());
+  append->AddInputConnection(cu->GetOutputPort());
+  append->AddInputConnection(cu2->GetOutputPort());
+  append->AddInputConnection(cyl->GetOutputPort());
   return append;
 }
 

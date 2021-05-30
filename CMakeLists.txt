@@ -9,12 +9,14 @@ include_directories(vtkbool)
 add_subdirectory(vtkbool)
 
 find_package(VTK REQUIRED COMPONENTS
+    vtkCommonComputationalGeometry
     vtkCommonCore
     vtkFiltersGeneral
     vtkFiltersHybrid
     vtkFiltersModeling
     vtkFiltersSources
     vtkInteractionStyle
+    vtkImagingOpenGL2
     vtkIOGeometry
     vtkIOImage
     vtkIOPLY

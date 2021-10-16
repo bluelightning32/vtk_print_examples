@@ -1,6 +1,6 @@
 # vtk_print_examples
 
-This repository shows how to use VTK and vtkbool to make STL files in C++ for 3d printing.
+This repository shows how to use VTK, vtkbool, and Walnut to make STL files in C++ for 3d printing.
 
 VTK library was created on 1993. As such, its API does not use new C++ features (such as std::function or std::shared_ptr)
 where they would be helpful. All of the objects are internally reference counted. The reference count can be managed by
@@ -11,7 +11,7 @@ with plots, images, cameras, widgets, etc... There is a decent amount of documen
 tends to focus on the all aspects of VTK except for 3d mesh processing. I have found the doxygen pages to be most useful
 for the 3d mesh functions. For these examples, all of the rendering boilerplate has been moved to render.h.
 
-VTK has a BSD 3 clause license, and vtkbool is licensed Apache 2.0.
+VTK has a BSD 3 clause license, vtkbool is licensed Apache 2.0, and Walnut is MIT licensed.
 
 Other missing CAD features:
 * Minkowski sum

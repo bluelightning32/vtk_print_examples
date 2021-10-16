@@ -58,6 +58,14 @@ print, even if the intersection is technically covered twice.
 
 This example uses append for 2 cubes that intersect and a cylinder that's not connected.
 
+## walnut_union
+![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/walnut_union.png)
+
+This is the same example as append_for_union, except that it uses Walnut, which
+does support disjoint meshes. Even though the png is identical to
+append_for_union, the STL file has the redundant faces removed, unlike
+append_for_union.
+
 ## translate
 ![screenshot](https://raw.githubusercontent.com/bluelightning32/vtk_print_examples/master/output/translate.png)
 

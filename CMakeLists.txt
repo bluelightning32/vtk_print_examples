@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 include_directories(vtkbool)
 
 add_subdirectory(vtkbool)
+add_subdirectory(walnut EXCLUDE_FROM_ALL)
 
 find_package(VTK REQUIRED COMPONENTS
     vtkCommonComputationalGeometry
@@ -34,6 +35,9 @@ find_package(GLEW REQUIRED)
 
 add_executable(vtkbool_union vtkbool_union.cxx)
 target_link_libraries(vtkbool_union ${GLEW_LIBRARIES} ${VTK_LIBRARIES} vtkbool)
+
+add_executable(walnut_union walnut_union.cxx)
+target_link_libraries(walnut_union ${GLEW_LIBRARIES} ${VTK_LIBRARIES} walnut_vtk)
 
 add_executable(translate translate.cxx)
 target_link_libraries(translate ${GLEW_LIBRARIES} ${VTK_LIBRARIES} vtkbool)
